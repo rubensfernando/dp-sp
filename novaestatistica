@@ -1,0 +1,593 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1"><title>
+	Secretaria de Estado da Segurança Pública - Governo do Estado de São Paulo
+</title><link id="Link1" title="padrao" media="all" href="../css/ssp.css" type="text/css" rel="stylesheet" /><link id="Link2" title="modify" media="all" href="../css/ssp_contraste.css" type="text/css" rel="alternate stylesheet" /><link id="Link3" media="all" href="../css/ssp_forms.css" type="text/css" rel="stylesheet" /><link rel="stylesheet" title="padrao" type="text/css" href="../css/jquery-ui-1.10.2.custom.css" media="all" /><link id="Link4" rel="alternate" type="application/rss+xml" title="Secretaria de Estado da Secretaria Pública" href="/rss.ashx" /><link id="Link5" media="all" href="../css/barrasp_media.css" type="text/css" rel="stylesheet" />           
+    
+    
+    
+    <script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="../js/jquery-ui-1.10.2.custom.js"></script>
+    <script src="../js/thickbox/thickbox.js" type="text/javascript"></script>
+    <link media="all" href="../js/thickbox/thickbox.css" type="text/css" rel="stylesheet" />
+    <script src="../js/tabs/jquery.tabs.js" type="text/javascript"></script>
+	<script type="text/javascript" src="../js/fontsize/font-controller.js"></script>
+    
+	<script type="text/javascript">
+	    $(function() {
+	        fontSize(".toolbox .item05", "#content", 9, 10, 20);
+	    });
+	</script>	
+	
+	 
+    
+    <script type="text/javascript" src="../js/styleswitcher/styleswitcher.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('.contraste').click(function() {
+                if (getActiveStyleSheet() == 'padrao')
+                    setActiveStyleSheet('modify');
+                else
+                    setActiveStyleSheet('padrao');
+            });
+        }); 
+    </script>
+  
+     <!-- Print -->
+
+	<script type="text/javascript">
+	    $(document).ready(function() {
+	        $(".print").css("display", "block")
+	        $(".print").click(function() {
+	            window.print();
+	            return false;
+	        });
+	    });
+	</script>
+    
+    
+    <script type="text/javascript">
+        (function(i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function() {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+            ga('create', 'UA-45808762-1', 'sp.gov.br');
+            ga('send', 'pageview');
+    </script>
+    
+    	
+    
+    <script type="text/javascript" src="../js/selectbox_goto.js"></script>
+    <link media="all" href="../css/estat.css" type="text/css" rel="Stylesheet" />
+       
+    <style type="text/css">
+        ul.nota li {float: none !important; font-size: 11px !important;}
+    </style>
+    <script type="text/javascript">
+        $(document).ready(function() {            
+            if ($(".exibeNota").val() == "0") {
+                $(".fundo").hide();
+                $(".pnlNota").hide();
+            }
+            $("#fechar_nota").click(function() {
+                $(".fundo").hide();
+                $(".pnlNota").hide();
+                $(".exibeNota").val('0');
+            });
+        });
+    </script>
+</head>
+<body id="estatisticas"> 
+    <DIV id="barrasp_global">
+  <DIV id="barrasp_nav">
+    <UL>
+      <LI>
+        <A href="http://www.saopaulo.sp.gov.br/" target="_blank">Portal do Governo</A>
+      </LI>
+      <LI>
+        <A href="http://www.cidadao.sp.gov.br/" target="_blank">Cidadão.SP</A>
+      </LI>        
+      <LI>
+        <A href="http://www.investe.sp.gov.br/" target="_blank">Investe SP</A>
+      </LI>
+    </UL>
+    <FORM onsubmit="return send(this)" method="post" action="">
+      <FIELDSET>
+        <P>
+          <LABEL for="selectbox_goto">Destaques:</LABEL>
+          <SELECT id="selectbox_goto" name="selectbox_goto">
+            <OPTION selected='' value="null">Destaques:</OPTION>
+            <OPTION value="http://www.saopaulo.sp.gov.br/sis/noticias.asp">SP Notícias</OPTION>
+            <OPTION value="http://www.poupatempo.sp.gov.br/">Poupatempo</OPTION>
+            <OPTION value="http://www.acessasaopaulo.sp.gov.br/">Acessa São Paulo</OPTION>
+            <OPTION value="http://www.e-negociospublicos.com.br/">Licitações</OPTION>
+            <OPTION value="null">---------------------------------</OPTION>
+            <OPTION value="null">Secretarias:</OPTION>
+            <OPTION value="http://www.sap.sp.gov.br/">- Administração Penitenciária</OPTION>
+            <OPTION value="http://www.agricultura.sp.gov.br/">- Agricultura e Abastecimento</OPTION>
+            <OPTION value="http://www.desenvolvimentosocial.sp.gov.br/">- Assistência e Desenvolvimento Social</OPTION>
+            <OPTION value="http://www.casacivil.sp.gov.br/">- Casa Civil</OPTION>
+            <OPTION value="http://www.casamilitar.sp.gov.br/">- Casa Militar</OPTION>
+            <OPTION value="http://www.comunicacao.sp.gov.br/">- Comunicação</OPTION>
+            <OPTION value="http://www.cultura.sp.gov.br/">- Cultura</OPTION>
+            <OPTION value="http://www.desenvolvimento.sp.gov.br/">- Desenvolvimento</OPTION>
+            <OPTION value="http://www.pessoacomdeficiencia.sp.gov.br/">- Direitos da Pessoa com Deficiência</OPTION>
+            <OPTION value="http://www.planejamento.sp.gov.br/">- Economia e Planejamento</OPTION>
+            <OPTION value="http://www.educacao.sp.gov.br/">- Educação</OPTION>
+            <OPTION value="http://www.emprego.sp.gov.br/">- Emprego e Relações do Trabalho</OPTION>
+            <OPTION value="http://www.ensinosuperior.sp.gov.br/">- Ensino Superior</OPTION>
+            <OPTION value="http://www.sejel.sp.gov.br/">- Esporte, Lazer e Turismo</OPTION>
+            <OPTION value="http://www.fazenda.sp.gov.br/">- Fazenda</OPTION>
+            <OPTION value="http://www.gestaopublica.sp.gov.br/">- Gestão Pública</OPTION>
+            <OPTION value="http://www.habitacao.sp.gov.br/">- Habitação</OPTION>
+            <OPTION value="http://www.justica.sp.gov.br/">- Justiça e Defesa da Cidadania</OPTION>
+            <OPTION value="http://www.ambiente.sp.gov.br/">- Meio Ambiente</OPTION>
+            <OPTION value="http://www.pge.sp.gov.br/">- Procuradoria Geral do Estado</OPTION>
+            <OPTION value="http://www.relacoesinstitucionais.sp.gov.br/">- Relações Institucionais</OPTION>
+            <OPTION value="http://www.energia.sp.gov.br/">- Saneamento e Energia</OPTION>
+            <OPTION value="http://www.saude.sp.gov.br/">- Saúde</OPTION>
+            <OPTION value="http://www.ssp.sp.gov.br/">- Segurança Pública</OPTION>
+            <OPTION value="http://www.transportes.sp.gov.br/">- Transportes</OPTION>
+            <OPTION value="http://www.stm.sp.gov.br/">- Transportes Metropolitanos</OPTION>
+          </SELECT>
+          <INPUT class="inputSubmit" value="OK" type="submit" />
+        </P>
+      </FIELDSET>
+    </FORM>
+    <H1 id="barrasp_logo">
+      <A title="Governo do Estado de São Paulo" href="http://www.saopaulo.sp.gov.br/" target="_blank"></A>
+    </H1>
+  </DIV>
+</DIV><form method="post" action="Pesquisa.aspx" id="form">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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s3BvbGlzFzA5OCBEUCAtIEphcmRpbSBNw61yaWFtFTA5OSBEUCAtIENhbXBvIEdyYW5kZRkxMDAgRFAgLSBKYXJkaW0gSGVyY3VsYW5vGzEwMSBEUCAtIEphcmRpbSBkYXMgSW1idWlhcxAxMDIgRFAgLSBTb2NvcnJvFzEwMyBEUCAtIENvaGFiIEl0YXF1ZXJhIDHCqiBERE0gLSAxwqogU2VjY2lvbmFsIC0gQ2VudHJvHTLCqiBERE0gLSAywqogU2VjY2lvbmFsIC0gU3VsHzPCqiBERE0gLSAzwqogU2VjY2lvbmFsIC0gT2VzdGUfNMKqIERETSAtIDTCqiBTZWNjaW9uYWwgLSBOb3J0ZR81wqogRERNIC0gNcKqIFNlY2Npb25hbCAtIExlc3RlJTbCqiBERE0gLSA2wqogU2VjY2lvbmFsIC0gU2FudG8gQW1hcm8iN8KqIERETSAtIDfCqiBTZWNjaW9uYWwgLSBJdGFxdWVyYSM4wqogRERNIC0gOMKqIFNlY2Npb25hbCBTw6NvIE1hdGV1cx85wqogRERNIC0gM8KqIFNlY2Npb25hbCAtIE9lc3RlIENlbnRyYWwgZGUgRmxhZ3JhbnRlcyBJSSAtIDkxIERQIkRlbC4gQWVyb3BvcnRvIEludC4gU1AgLSBHdWFydWxob3MjRGVsLiBBZXJvcG9ydG8gSW50LiBWaXJhY29wb3MgLSBDUFMdRGVsLiBBZXJvcG9ydG8gU1AgLSBDb25nb25oYXMgRGVsLiBQb2wuIEF0ZW5kaW1lbnRvIGFvIFR1cmlzdGE5RGVsZWdhY2lhIGRlIFByb3Rlw6fDo28gYW8gSWRvc28gLSAxwqogU2VjY2lvbmFsIC0gQ2VudHJvKERlbGVnYWNpYSBkbyBJZG9zbyAtIDLCqiBTZWNjaW9uYWwgLSBTdWwqRGVsZWdhY2lhIGRvIElkb3NvIC0gM8KqIFNlY2Npb25hbCAtIE9lc3RlKkRlbGVnYWNpYSBkbyBJZG9zbyAtIDTCqiBTZWNjaW9uYWwgLSBOb3J0ZSpEZWxlZ2FjaWEgZG8gSWRvc28gLSA1wqogU2VjY2lvbmFsIC0gTGVzdGUvRGVsZWdhY2lhIGRvIElkb3NvIC0gNsKqIFNlY2lvbmFsIC0gU2FudG8gQW1hcm8tRGVsZWdhY2lh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" />
+
+<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEWlQEC/NaOwgcCy8WJ3AsCmoGZxQ4CtcSksAkC5ryJiwsC5ryV7gIC5ryh1QUC5rzNuA0CvqqKnwkCoaqKnwkCoKqKnwkCo6qKnwkCoqqKnwkCpaqKnwkCpKqKnwkCp6qKnwkCtqqKnwkCuaqKnwkCoarKnAkCoarGnAkCoarCnAkC9fz08wsCya/UuQkC4aCfrwECtdju3QcC5Jzx+AkC5JyxigMCuurByQ0CtdiylAMC86WzuwQCn8H/jw8C7JzNzwkCyfOr5QMCl8GbtAECl8GHlQYCuuqh/gwCuurlkQYCwfPTrgICwfP7sggCwfPXjwMCwfPD6AoCwfO/xA0CwfOroQUCwfOH+gwCwfO7xA0CwfOXoQUCwfOD+gwCwfP/1wcCwfPrsA8C5Jz5mwgC5JzV9AMC5JyBnwYC5Jz9+AkC5JzpVQKXwYu0AQKXwaffBwKXwZO4DwKXwY+VBgKXwfvuCQKXwddLApfBw6QIApfBv4ADApfBq90KArrqucQHAq7PyPIKAq7PpM4NAq7PkKsFAq7PjIQMAq7P+OEHAq7P1LoPAq7PwJcGAq7PvPMJArXYwtsKArXYvrcCAuyclc4JAvOlt7sEApbP0KUCAr3Y8o4IAsDhnPsGAoWC6eQJAqiri9EHAp/By48PAqLq1fgFAsnz9+UDAqLqnfgFAsnzv+UDAuyc2c8JAvOl+7gEApbPhKUCAr3Ypo4IAsDhwPgGAoWCneQJAsnzp+UDAvOl47gEApbPjKUCAr3Yro4IAsDhyPgGAqirp9EHAp/B548PAqLqjfgFAsnzr+UDAvOl67gEAr3Ylo4IAoWCjeQJAp/B748PAsDhvPsGAoWCieQJAqirq9EHAp/B648PAsnzl+UDAuycsc4JAvOl07gEApbP/KUCAr3Yno4IApfBo90KArrqscQHArrqraEPArrq2ckNAsHz89cHAuScxa4IArrqlaEPArXY6l8C7JyRzgkCqKu/0QcCyfOj5QMCouqJ+AUCwOG4+wYCl8GjuA8Chab/uAQCqM+YpQICz9i6jggC/pzZzwkC/qDTrAEC/aCfrwEC+qCfrwEC+6CfrwEC+KCfrwEC6aCfrwEC5qCfrwEC/qDfrAECuqu/0QcCuurJxQcCtdjygAwC4t/GsQ0C+6PSzAUC/62KlwgCiN7BvAYChcuM3QUC6sjG1Aw=" />
+    <div id="page">
+        <div id="header">
+            <div id="logo">
+                <h1>
+                    <a href="../Default.aspx" accesskey="1" title="Secretaria de Estado da Segurança Pública - Governo do Estado de São Paulo">Secretaria de Segurança Pública do Estado de São Paulo</a>
+                </h1>
+            </div>
+            <ul id="orgaos">
+  <li class="item01">
+    <a target="_blank" href="http://www.policiacivil.sp.gov.br">Polícia Civil</a>
+  </li>
+  <li class="item02">
+    <a target="_blank" href="http://www.policiamilitar.sp.gov.br/inicial.asp">Polícia Militar</a>
+  </li>
+  <li class="item03">
+    <a target="_blank" href="http://www.policiacientifica.sp.gov.br">Polícia Científica</a>
+  </li>  
+</ul>
+            <div id="navMain">
+                <ul class="nav">
+                    <li class="item01"><a href="../institucional/default.aspx">Institucional</a></li>
+                    <li class="item02"><a href="../noticia/ultimasnoticias.aspx" id="hypNoticia">
+                        Notícias</a> </li>
+                    <li class="item03"><a href="../acoes/default.aspx">Ações de Segurança</a>
+                    </li>
+                    <li class="item04"><a href="../nbo/default.aspx">Delegacia Eletrônica</a>
+                    </li>
+                    <li class="item05"><a href="../servicos/default.aspx">Serviços</a>
+                    </li>
+                    <li class="item06"><a href="../transito/default.aspx">Trânsito</a>
+                    
+                    </li>
+                    <li class="item07"><a href="default.aspx">Estatísticas</a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div id="search">                
+                <fieldset>
+                    <label for="txtBusca">                        
+                        <input name="ctl00$txtBusca" type="text" id="txtBusca" class="inputText busca" onfocus="if(this.value==&#39;Digite sua busca...&#39;)this.value=&#39;&#39;" value="Digite sua busca..." />
+                    </label>
+                    <input type="submit" name="ctl00$btnBuscar" value="Buscar" id="btnBuscar" class="botao_busca" />
+                </fieldset>                
+            </div>
+            <div class="toolbox">
+                
+<ul class="nav">
+    <li class="item01"><a href="../email.aspx?endereco=http%3a%2f%2fwww.ssp.sp.gov.br%2fnovaestatistica%2fPesquisa.aspx&keepThis=true&TB_iframe=true&height=440&width=330&inlineId=popup" id="toolbox1_hypEnviarEmail" class="mail thickbox" title="Enviar por e-mail">Enviar por e-mail</a> </li>
+    <li class="item02"><a href="../comunicar.aspx?keepThis=true&TB_iframe=true&height=440&width=330&inlineId=popup" id="toolbox1_A2" class="error thickbox" title="Comunicar erros">
+        Comunicar erros</a> </li>
+    <li class="item03"><a href="../sis/cadastro_newsletter.aspx?keepThis=true&TB_iframe=true&height=300&width=280&inlineId=popup" id="toolbox1_A3" class="newsletter thickbox" title="Informativo SP Notícias">
+        Receber boletim</a></li>
+    <li class="item04"><a class="print" style="display: block;">Imprimir</a> </li>
+    <li class="item05"><a class="smallFont" href="javascript:void(0);" title="Diminuir tamanho do texto">
+        Diminuir tamanho do texto</a> <a class="defaultFont" href="javascript:void(0);" title="Tamanho padrão do texto">
+            Tamanho padrão do texto</a> <a class="largeFont" href="javascript:void(0);" title="Aumentar tamanho do texto">
+                Aumentar tamanho do texto</a> </li>
+    <li class="item06"><a rel="contraste" class="contraste">Contraste</a> </li>
+    <li class="item07"><a href="../mapa.aspx" id="toolbox1_A4" class="mapa">Mapa do
+        Site</a> </li>
+    <li class="item08"><a href="../fale/default.aspx" id="toolbox1_A5" class="fale">
+        Fale Conosco</a> </li>
+    <li class="item09"><a href="../rss.ashx" id="toolbox1_A6" class="rss">RSS</a>
+    </li>
+    <li class="item10">
+        <a href="http://www.facebook.com/segurancapublicasp" id="toolbox1_A7" target="_blank">
+            <img src="../img/ico/facebook.png" id="toolbox1_imgFacebook" alt="Facebook" /></a>
+        <a href="https://twitter.com/#!/SegurancaSP" id="toolbox1_A8" target="_blank">
+            <img src="../img/ico/twitter.png" id="toolbox1_imgTwitter" alt="Twitter" /></a>
+        <a href="https://plus.google.com/u/0/101257925088133147645/posts" id="toolbox1_A9" target="_blank">
+            <img src="../img/ico/google.png" id="toolbox1_imgGooglePlus" alt="Google+" /></a>
+    </li>
+</ul>
+
+            </div>
+        </div>
+        <div id="menu">
+            <div id="navSection">
+                <ul id="breadcrumbs">
+                    
+
+                </ul>
+                <h3 class="section">
+                    <a href="default.aspx" id="A7">Estatísticas</a>
+                </h3>
+                <ul class="nav">
+                    <li class="item01"><a href="default.aspx" id="A8">Apresentação</a></li>
+                    <li class="item02"><a href="Pesquisa.aspx">Dados Estatísticos</a></li>
+                    
+                    <li class="item02"><a href="Mapas.aspx" id="A1">Dados por Mapa</a></li>
+                    <li class="item03"><a href="Trimestrais.aspx">Estatísticas Trimestrais</a></li>
+                    <li class="item04" style="width: 106px"><a href="ViolenciaMulher.aspx" style="width: 90px">Violência Contra as Mulheres</a></li>
+                    <li class="item04"><a href="PerfilHomicidio.aspx" id="A2">Perfil de Homicídio</a></li>
+                    <li class="item04"><a href="PerfilRoubo.aspx" id="A3">Perfil de Roubo</a></li>
+                    
+                    <li class="item04"><a href="Estudos.aspx">Estudos</a></li>
+                    
+                </ul>
+                <br />
+            </div>
+        </div>
+        
+        
+    <div id="" style="width: 940px !important;">
+        
+        <div>
+            <center><b><span id="ContentPlaceHolder1_lbTitulo" class="Titulo">Dados estatísticos do Estado de São Paulo</span></b></center>
+        </div>
+        
+        <div class="divAnoDrop">
+            <span id="ContentPlaceHolder1_lbAnos" class="lbAnoDrop">Anos*:</span>
+            <select name="ctl00$ContentPlaceHolder1$ddlAnos" id="ContentPlaceHolder1_ddlAnos" class="ddlAnos">
+	<option value="0">Todos</option>
+	<option value="2015">2015</option>
+	<option value="2014">2014</option>
+	<option selected="selected" value="2013">2013</option>
+	<option value="2012">2012</option>
+
+</select>
+        </div>
+        <div>&nbsp;</div>
+        
+        <div class="divRegiao">
+            <span id="ContentPlaceHolder1_lbRegioes" class="lbRegiaoDrop">Regiões:</span>
+            <select name="ctl00$ContentPlaceHolder1$ddlRegioes" id="ContentPlaceHolder1_ddlRegioes" class="ddlReg">
+	<option value="0">Todos</option>
+	<option selected="selected" value="1">Capital</option>
+	<option value="2">Grande S&#227;o Paulo (exclui a Capital)</option>
+	<option value="3">S&#227;o Jos&#233; dos Campos</option>
+	<option value="4">Campinas</option>
+	<option value="5">Ribeir&#227;o Preto</option>
+	<option value="6">Bauru</option>
+	<option value="7">S&#227;o Jos&#233; do Rio Preto</option>
+	<option value="8">Santos</option>
+	<option value="9">Sorocaba</option>
+	<option value="10">Presidente Prudente</option>
+	<option value="11">Piracicaba</option>
+	<option value="12">Ara&#231;atuba</option>
+
+</select>
+        </div>
+        
+        <div class="divMunic">
+            <span id="ContentPlaceHolder1_lbMunicipios" class="lbMunicDrop">Municípios:</span>
+            <select name="ctl00$ContentPlaceHolder1$ddlMunicipios" id="ContentPlaceHolder1_ddlMunicipios" class="ddlMunic">
+	<option selected="selected" value="0">Todos</option>
+	<option value="565">S&#227;o Paulo</option>
+
+</select>
+        </div>
+        
+        <div class="divDist">
+            <span id="ContentPlaceHolder1_lbDelegacias" class="lbDistDrop">Delegacias:</span>
+            <select name="ctl00$ContentPlaceHolder1$ddlDelegacias" id="ContentPlaceHolder1_ddlDelegacias" class="ddlDist">
+	<option selected="selected" value="0">Todos</option>
+	<option value="1410">001 DP - S&#233;</option>
+	<option value="1246">002 DP - Bom Retiro</option>
+	<option value="1143">003 DP - Santa Efigenia</option>
+	<option value="1067">004 DP - Consola&#231;&#227;o</option>
+	<option value="1015">005 DP - Liberdade</option>
+	<option value="983">006 DP - Cambuci</option>
+	<option value="957">007 DP - Lapa</option>
+	<option value="934">008 DP - Br&#225;s</option>
+	<option value="915">009 DP - Vila Gilherme</option>
+	<option value="1478">01 DP Pessoa com Defici&#234;ncia</option>
+	<option value="1275">010 DP - Penha de Fran&#231;a</option>
+	<option value="1265">011 DP - Santo Amaro</option>
+	<option value="1262">012 DP - Pari</option>
+	<option value="1259">013 DP - Casa Verde</option>
+	<option value="1257">014 DP - Pinheiros</option>
+	<option value="1256">015 DP - Jardim Paulista</option>
+	<option value="1255">016 DP - Vila Clementino</option>
+	<option value="1254">017 DP - Ipiranga</option>
+	<option value="1253">018 DP - Alto da Mo&#243;ca</option>
+	<option value="1252">019 DP - Vila Maria</option>
+	<option value="1154">020 DP - Tucuruvi</option>
+	<option value="1153">021 DP - Vila Matilde</option>
+	<option value="1152">022 DP - S&#227;o Miguel Paulista</option>
+	<option value="1151">023 DP - Perdizes</option>
+	<option value="1150">024 DP - Ermelino Matarazzo</option>
+	<option value="1149">025 DP - Parelheiros</option>
+	<option value="1148">026 DP - Sacom&#227;</option>
+	<option value="1147">027 DP - Ibirapuera</option>
+	<option value="1146">028 DP - Nossa Sra. Do &#211;</option>
+	<option value="1145">029 DP - Vila Diva</option>
+	<option value="1078">030 DP - Tatuap&#233;</option>
+	<option value="1077">031 DP - Vila Carr&#227;o</option>
+	<option value="1076">032 DP - Itaquera</option>
+	<option value="1075">033 DP - Pirituba</option>
+	<option value="1074">034 DP - Morumbi</option>
+	<option value="1073">035 DP - Jabaquara</option>
+	<option value="1072">036 DP - Vila Mariana</option>
+	<option value="1071">037 DP - Campo Limpo</option>
+	<option value="1070">038 DP - Vila Nova Cachoeirinha</option>
+	<option value="1069">039 DP - Vila Gustavo</option>
+	<option value="1027">040 DP - Bairro do Lim&#227;o</option>
+	<option value="1026">041 DP - Vila Rica</option>
+	<option value="1025">042 DP - Parque S&#227;o Lucas</option>
+	<option value="1024">043 DP - Cidade Ademar</option>
+	<option value="1023">044 DP - Guaianazes</option>
+	<option value="1022">045 DP - Vila Brasil&#226;ndia</option>
+	<option value="1021">046 DP - Perus</option>
+	<option value="1020">047 DP - Cap&#227;o Redondo</option>
+	<option value="1019">048 DP - Cidade Dutra</option>
+	<option value="1018">049 DP - S&#227;o Mateus</option>
+	<option value="994">050 DP - Itaim Paulista</option>
+	<option value="993">051 DP - Butant&#227;</option>
+	<option value="992">052 DP - Parque S&#227;o Jorge</option>
+	<option value="991">053 DP - Parque do Carmo</option>
+	<option value="990">054 DP - Cidade Tiradentes</option>
+	<option value="989">055 DP - Parque S&#227;o Rafael</option>
+	<option value="988">056 DP - Vila Alpina</option>
+	<option value="987">057 DP - Parque da Mo&#243;ca</option>
+	<option value="986">058 DP - Vila Formosa</option>
+	<option value="985">059 DP - Jardim Noemia</option>
+	<option value="966">062 DP - Jardim Popular</option>
+	<option value="965">063 DP - Vila Jacu&#237;</option>
+	<option value="964">064 DP - Cidade A E Carvalho</option>
+	<option value="963">065 DP - Artur Alvim</option>
+	<option value="962">066 DP - Jardim Aricanduva</option>
+	<option value="961">067 DP - Jardim Robru</option>
+	<option value="960">068 DP - Lajeado</option>
+	<option value="959">069 DP - Teot&#244;nio Vilela</option>
+	<option value="945">070 DP - Sapopemba</option>
+	<option value="943">072 DP - Vila Penteado</option>
+	<option value="942">073 DP - Ja&#231;an&#227;</option>
+	<option value="941">074 DP - Parada de Taipas</option>
+	<option value="940">075 DP - Jardim Arpoador</option>
+	<option value="938">077 DP - Santa Cec&#237;lia</option>
+	<option value="937">078 DP - Paulista</option>
+	<option value="926">080 DP - Vila Joaniza</option>
+	<option value="925">081 DP - Bel&#233;m</option>
+	<option value="923">083 DP - Parque Bristol</option>
+	<option value="921">085 DP - Jardim Mirna</option>
+	<option value="919">087 DP - Vila Pereira Barreto</option>
+	<option value="917">089 DP - Jardim Tabo&#227;o</option>
+	<option value="910">090 DP - Parque Novo Mundo</option>
+	<option value="909">091 DP - Ceagesp</option>
+	<option value="908">092 DP - Parque Santo Ant&#244;nio</option>
+	<option value="907">093 DP - Jaguar&#233;</option>
+	<option value="905">095 DP - Heli&#243;polis</option>
+	<option value="904">096 DP - Mon&#231;&#245;es</option>
+	<option value="903">097 DP - American&#243;polis</option>
+	<option value="902">098 DP - Jardim M&#237;riam</option>
+	<option value="901">099 DP - Campo Grande</option>
+	<option value="1270">100 DP - Jardim Herculano</option>
+	<option value="1269">101 DP - Jardim das Imbuias</option>
+	<option value="1268">102 DP - Socorro</option>
+	<option value="1267">103 DP - Cohab Itaquera</option>
+	<option value="1251">1&#170; DDM - 1&#170; Seccional - Centro</option>
+	<option value="1144">2&#170; DDM - 2&#170; Seccional - Sul</option>
+	<option value="1068">3&#170; DDM - 3&#170; Seccional - Oeste</option>
+	<option value="1017">4&#170; DDM - 4&#170; Seccional - Norte</option>
+	<option value="984">5&#170; DDM - 5&#170; Seccional - Leste</option>
+	<option value="958">6&#170; DDM - 6&#170; Seccional - Santo Amaro</option>
+	<option value="935">7&#170; DDM - 7&#170; Seccional - Itaquera</option>
+	<option value="916">8&#170; DDM - 8&#170; Seccional S&#227;o Mateus</option>
+	<option value="900">9&#170; DDM - 3&#170; Seccional - Oeste</option>
+	<option value="1476">Central de Flagrantes II - 91 DP</option>
+	<option value="773">Del. Aeroporto Int. SP - Guarulhos</option>
+	<option value="772">Del. Aeroporto Int. Viracopos - CPS</option>
+	<option value="771">Del. Aeroporto SP - Congonhas</option>
+	<option value="764">Del. Pol. Atendimento ao Turista</option>
+	<option value="11">Delegacia de Prote&#231;&#227;o ao Idoso - 1&#170; Seccional - Centro</option>
+	<option value="4">Delegacia do Idoso - 2&#170; Seccional - Sul</option>
+	<option value="5">Delegacia do Idoso - 3&#170; Seccional - Oeste</option>
+	<option value="6">Delegacia do Idoso - 4&#170; Seccional - Norte</option>
+	<option value="7">Delegacia do Idoso - 5&#170; Seccional - Leste</option>
+	<option value="8">Delegacia do Idoso - 6&#170; Secional - Santo Amaro</option>
+	<option value="9">Delegacia do Idoso - 7&#170; Seccional - Itaquera</option>
+	<option value="10">Delegacia do Idoso - 8&#170; Seccional - S&#227;o Mateus</option>
+	<option value="758">Delegacia Porto de Santos</option>
+	<option value="1469">DELPOL Metropolitano</option>
+	<option value="1411">OUTRAS ESPECIALIZADAS</option>
+
+</select>
+        </div>
+        
+        <div class="divTipos">
+            
+            
+            <div id="ContentPlaceHolder1_divMensais" class="divExibMensal">
+                <a id="ContentPlaceHolder1_btnMensal" class="btnClicked btnMensal" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$btnMensal&#39;,&#39;&#39;)">Ocorrências Policiais<br>registradas por Mês</a>
+            </div>
+            <div id="ContentPlaceHolder1_divPoliciais" class="divExibPolicial">
+                <a id="ContentPlaceHolder1_btnPolicial" class="btn btnPolicial" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$btnPolicial&#39;,&#39;&#39;)">Produtividade Policial</a>            
+            </div>
+        </div>
+        <br clear="all" />
+        
+        <div class="divLinks">
+            <center><b>
+                <a id="ContentPlaceHolder1_lkEstado" class="Links" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$lkEstado&#39;,&#39;&#39;)">Estado SP</a>
+                <a id="ContentPlaceHolder1_lkRegiao" class="Links" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$lkRegiao&#39;,&#39;&#39;)"> | Capital</a>
+                
+                
+            </b></center>
+            
+        </div>
+        
+        <div class="divExport">
+            <div style="position:absolute; left:0px; text-align:center; width:940px;">
+                <span id="ContentPlaceHolder1_lbInfo" class="Links">Ocorrências policiais registradas por mês</span>
+            </div>
+            <div id="ContentPlaceHolder1_divExportar" style="position:absolute; right:0px;">
+                <span id="ContentPlaceHolder1_lbExport">Exportar os dados para: </span>
+                <input type="image" name="ctl00$ContentPlaceHolder1$btnExcel" id="ContentPlaceHolder1_btnExcel" src="../img/ico/ico_excel.png" align="bottom" />
+            </div>
+        </div>
+        <br clear="all" />
+        
+        
+        
+        
+        
+        <div id="ContentPlaceHolder1_divMensal">
+            
+            <div class="divLateral">
+                <b><span id="ContentPlaceHolder1_lbTipo" class="Tipos">Municípios</span></b>
+                
+                        <a id="ContentPlaceHolder1_repLateral_lkLateral_0" class="btn btnLateral" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$repLateral$ctl00$lkLateral&#39;,&#39;&#39;)">São Paulo</a>
+                    
+            </div>
+            
+            <div class="divMensal">
+                
+                        <b><span id="ContentPlaceHolder1_repAnos_lbAno_0" class="Anos">2013</span></b>
+                        <div id="ContentPlaceHolder1_repAnos_divGrid_0">
+                            <div>
+	<table class="grid gridMensal" cellspacing="0" rules="all" border="1" id="ContentPlaceHolder1_repAnos_gridDados_0">
+		<tr>
+			<th class="grid_headernat" scope="col">Natureza</th><th class="grid_headermes" scope="col">Jan</th><th class="grid_headermes" scope="col">Fev</th><th class="grid_headermes" scope="col">Mar</th><th class="grid_headermes" scope="col">Abr</th><th class="grid_headermes" scope="col">Mai</th><th class="grid_headermes" scope="col">Jun</th><th class="grid_headermes" scope="col">Jul</th><th class="grid_headermes" scope="col">Ago</th><th class="grid_headermes" scope="col">Set</th><th class="grid_headermes" scope="col">Out</th><th class="grid_headermes" scope="col">Nov</th><th class="grid_headermes" scope="col">Dez</th><th class="grid_headermes" scope="col">Total</th>
+		</tr><tr class="grid_row">
+			<td class="grid_nat">HOMIC&#205;DIO DOLOSO (2)</td><td class="grid_mes">98</td><td class="grid_mes">89</td><td class="grid_mes">117</td><td class="grid_mes">95</td><td class="grid_mes">108</td><td class="grid_mes">107</td><td class="grid_mes">83</td><td class="grid_mes">79</td><td class="grid_mes">92</td><td class="grid_mes">108</td><td class="grid_mes">101</td><td class="grid_mes">99</td><td class="grid_mes">1.176</td>
+		</tr><tr class="grid_alterrow">
+			<td class="grid_nat">N&#186; DE V&#205;TIMAS EM HOMIC&#205;DIO DOLOSO (3)</td><td class="grid_mes">109</td><td class="grid_mes">91</td><td class="grid_mes">125</td><td class="grid_mes">102</td><td class="grid_mes">117</td><td class="grid_mes">115</td><td class="grid_mes">85</td><td class="grid_mes">89</td><td class="grid_mes">92</td><td class="grid_mes">117</td><td class="grid_mes">110</td><td class="grid_mes">104</td><td class="grid_mes">1.256</td>
+		</tr><tr class="grid_row">
+			<td class="grid_nat">HOMIC&#205;DIO DOLOSO POR ACIDENTE DE TR&#194;NSITO</td><td class="grid_mes">0</td><td class="grid_mes">0</td><td class="grid_mes">2</td><td class="grid_mes">1</td><td class="grid_mes">0</td><td class="grid_mes">3</td><td class="grid_mes">1</td><td class="grid_mes">0</td><td class="grid_mes">0</td><td class="grid_mes">3</td><td class="grid_mes">2</td><td class="grid_mes">2</td><td class="grid_mes">14</td>
+		</tr><tr class="grid_alterrow">
+			<td class="grid_nat">N&#186; DE V&#205;TIMAS EM HOMIC&#205;DIO DOLOSO POR ACIDENTE DE TR&#194;NSITO</td><td class="grid_mes">0</td><td class="grid_mes">0</td><td class="grid_mes">2</td><td class="grid_mes">2</td><td class="grid_mes">0</td><td class="grid_mes">3</td><td class="grid_mes">1</td><td class="grid_mes">0</td><td class="grid_mes">0</td><td class="grid_mes">3</td><td class="grid_mes">2</td><td class="grid_mes">2</td><td class="grid_mes">15</td>
+		</tr><tr class="grid_row">
+			<td class="grid_nat">HOMIC&#205;DIO CULPOSO POR ACIDENTE DE TR&#194;NSITO</td><td class="grid_mes">44</td><td class="grid_mes">31</td><td class="grid_mes">52</td><td class="grid_mes">40</td><td class="grid_mes">38</td><td class="grid_mes">58</td><td class="grid_mes">47</td><td class="grid_mes">56</td><td class="grid_mes">29</td><td class="grid_mes">47</td><td class="grid_mes">43</td><td class="grid_mes">34</td><td class="grid_mes">519</td>
+		</tr><tr class="grid_alterrow">
+			<td class="grid_nat">HOMIC&#205;DIO CULPOSO OUTROS</td><td class="grid_mes">3</td><td class="grid_mes">7</td><td class="grid_mes">6</td><td class="grid_mes">7</td><td class="grid_mes">4</td><td class="grid_mes">3</td><td class="grid_mes">0</td><td class="grid_mes">1</td><td class="grid_mes">2</td><td class="grid_mes">5</td><td class="grid_mes">3</td><td class="grid_mes">3</td><td class="grid_mes">44</td>
+		</tr><tr class="grid_row">
+			<td class="grid_nat">TENTATIVA DE HOMIC&#205;DIO</td><td class="grid_mes">127</td><td class="grid_mes">118</td><td class="grid_mes">118</td><td class="grid_mes">123</td><td class="grid_mes">115</td><td class="grid_mes">113</td><td class="grid_mes">114</td><td class="grid_mes">114</td><td class="grid_mes">134</td><td class="grid_mes">136</td><td class="grid_mes">122</td><td class="grid_mes">125</td><td class="grid_mes">1.459</td>
+		</tr><tr class="grid_alterrow">
+			<td class="grid_nat">LES&#195;O CORPORAL DOLOSA</td><td class="grid_mes">3.391</td><td class="grid_mes">3.430</td><td class="grid_mes">3.752</td><td class="grid_mes">3.365</td><td class="grid_mes">3.300</td><td class="grid_mes">3.104</td><td class="grid_mes">2.665</td><td class="grid_mes">2.972</td><td class="grid_mes">3.132</td><td class="grid_mes">2.815</td><td class="grid_mes">2.981</td><td class="grid_mes">3.110</td><td class="grid_mes">38.017</td>
+		</tr><tr class="grid_row">
+			<td class="grid_nat">LES&#195;O CORPORAL CULPOSA POR ACIDENTE DE TR&#194;NSITO</td><td class="grid_mes">1.836</td><td class="grid_mes">1.892</td><td class="grid_mes">2.235</td><td class="grid_mes">2.182</td><td class="grid_mes">2.191</td><td class="grid_mes">2.023</td><td class="grid_mes">2.134</td><td class="grid_mes">2.227</td><td class="grid_mes">2.219</td><td class="grid_mes">2.440</td><td class="grid_mes">2.176</td><td class="grid_mes">2.220</td><td class="grid_mes">25.775</td>
+		</tr><tr class="grid_alterrow">
+			<td class="grid_nat">LES&#195;O CORPORAL CULPOSA - OUTRAS</td><td class="grid_mes">100</td><td class="grid_mes">118</td><td class="grid_mes">165</td><td class="grid_mes">114</td><td class="grid_mes">102</td><td class="grid_mes">82</td><td class="grid_mes">88</td><td class="grid_mes">93</td><td class="grid_mes">65</td><td class="grid_mes">92</td><td class="grid_mes">104</td><td class="grid_mes">86</td><td class="grid_mes">1.209</td>
+		</tr><tr class="grid_row">
+			<td class="grid_nat">LATROC&#205;NIO</td><td class="grid_mes">15</td><td class="grid_mes">15</td><td class="grid_mes">10</td><td class="grid_mes">14</td><td class="grid_mes">14</td><td class="grid_mes">9</td><td class="grid_mes">11</td><td class="grid_mes">11</td><td class="grid_mes">8</td><td class="grid_mes">12</td><td class="grid_mes">10</td><td class="grid_mes">11</td><td class="grid_mes">140</td>
+		</tr><tr class="grid_alterrow">
+			<td class="grid_nat">N&#186; DE V&#205;TIMAS EM LATROC&#205;NIO</td><td class="grid_mes">15</td><td class="grid_mes">15</td><td class="grid_mes">10</td><td class="grid_mes">14</td><td class="grid_mes">15</td><td class="grid_mes">10</td><td class="grid_mes">11</td><td class="grid_mes">11</td><td class="grid_mes">8</td><td class="grid_mes">12</td><td class="grid_mes">11</td><td class="grid_mes">11</td><td class="grid_mes">143</td>
+		</tr><tr class="grid_row">
+			<td class="grid_nat">ESTUPRO</td><td class="grid_mes">269</td><td class="grid_mes">287</td><td class="grid_mes">311</td><td class="grid_mes">246</td><td class="grid_mes">243</td><td class="grid_mes">265</td><td class="grid_mes">213</td><td class="grid_mes">251</td><td class="grid_mes">208</td><td class="grid_mes">217</td><td class="grid_mes">197</td><td class="grid_mes">196</td><td class="grid_mes">2.903</td>
+		</tr><tr class="grid_alterrow">
+			<td class="grid_nat">ROUBO - OUTROS (1)</td><td class="grid_mes">9.463</td><td class="grid_mes">8.928</td><td class="grid_mes">9.732</td><td class="grid_mes">10.391</td><td class="grid_mes">10.373</td><td class="grid_mes">10.896</td><td class="grid_mes">11.383</td><td class="grid_mes">11.407</td><td class="grid_mes">10.669</td><td class="grid_mes">11.368</td><td class="grid_mes">10.242</td><td class="grid_mes">11.674</td><td class="grid_mes">126.526</td>
+		</tr><tr class="grid_row">
+			<td class="grid_nat">ROUBO DE VE&#205;CULO</td><td class="grid_mes">3.776</td><td class="grid_mes">3.557</td><td class="grid_mes">4.378</td><td class="grid_mes">4.225</td><td class="grid_mes">4.012</td><td class="grid_mes">4.183</td><td class="grid_mes">4.237</td><td class="grid_mes">4.257</td><td class="grid_mes">4.063</td><td class="grid_mes">4.393</td><td class="grid_mes">4.550</td><td class="grid_mes">5.082</td><td class="grid_mes">50.713</td>
+		</tr><tr class="grid_alterrow">
+			<td class="grid_nat">ROUBO A BANCO</td><td class="grid_mes">10</td><td class="grid_mes">6</td><td class="grid_mes">7</td><td class="grid_mes">9</td><td class="grid_mes">15</td><td class="grid_mes">12</td><td class="grid_mes">11</td><td class="grid_mes">17</td><td class="grid_mes">7</td><td class="grid_mes">9</td><td class="grid_mes">8</td><td class="grid_mes">11</td><td class="grid_mes">122</td>
+		</tr><tr class="grid_row">
+			<td class="grid_nat">ROUBO DE CARGA</td><td class="grid_mes">332</td><td class="grid_mes">348</td><td class="grid_mes">403</td><td class="grid_mes">348</td><td class="grid_mes">357</td><td class="grid_mes">363</td><td class="grid_mes">378</td><td class="grid_mes">437</td><td class="grid_mes">401</td><td class="grid_mes">411</td><td class="grid_mes">348</td><td class="grid_mes">455</td><td class="grid_mes">4.581</td>
+		</tr><tr class="grid_alterrow">
+			<td class="grid_nat">FURTO - OUTROS</td><td class="grid_mes">16.627</td><td class="grid_mes">15.025</td><td class="grid_mes">17.234</td><td class="grid_mes">17.247</td><td class="grid_mes">18.030</td><td class="grid_mes">16.126</td><td class="grid_mes">16.889</td><td class="grid_mes">17.225</td><td class="grid_mes">15.956</td><td class="grid_mes">18.269</td><td class="grid_mes">16.663</td><td class="grid_mes">16.014</td><td class="grid_mes">201.305</td>
+		</tr><tr class="grid_row">
+			<td class="grid_nat">FURTO DE VE&#205;CULO</td><td class="grid_mes">3.879</td><td class="grid_mes">3.487</td><td class="grid_mes">4.201</td><td class="grid_mes">4.258</td><td class="grid_mes">3.843</td><td class="grid_mes">4.348</td><td class="grid_mes">4.316</td><td class="grid_mes">4.361</td><td class="grid_mes">4.209</td><td class="grid_mes">4.563</td><td class="grid_mes">4.055</td><td class="grid_mes">2.957</td><td class="grid_mes">48.477</td>
+		</tr>
+	</table>
+</div>
+                        </div>
+                        
+                        <div>&nbsp;</div>
+                    
+                
+                <div id="ContentPlaceHolder1_divNotasMensal">
+                    <p style="font-size: 11px">
+                    FONTE: DEPARTAMENTO DE POLÍCIA CIVIL, POLÍCIA MILITAR E SUPERINTENDÊNCIA DA POLÍCIA TÉCNICO-CIENTÍFICA
+                    </p>
+                    <ul class="nota">                  
+                        <li>(1) Incluído Roubo Carga e Banco.</li>
+                        <li>(2) Homicídio Doloso inclui Homicídio Doloso por Acidente de Trânsito.</li>
+                        <li>(3) Nº de Vítimas de Homicídio Doloso inclui Nº de Vítimas de Homicídio Doloso por Acidente de Trânsito.</li>
+                        <li>(…) Dados não disponíveis.</li>
+                    </ul>
+                    <br clear="all" />
+                    <p>
+                        <b>Nota:</b><br />
+                        Até junho de 2001: delitos por local de registro. A partir de julho de 2001: delitos
+                        por local de ocorrência.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="grid_12">&nbsp;</div>
+        
+        <div>
+            <span id="ContentPlaceHolder1_lbNotas">(*) a pesquisa por ano é funcional somente nas estatísticas mensais.</span>
+        </div>
+    </div>
+
+        <div id="footer">
+            <div class="toolbox">
+                
+<ul class="nav">
+    <li class="item01"><a href="../email.aspx?endereco=http%3a%2f%2fwww.ssp.sp.gov.br%2fnovaestatistica%2fPesquisa.aspx&keepThis=true&TB_iframe=true&height=440&width=330&inlineId=popup" id="toolbox2_hypEnviarEmail" class="mail thickbox" title="Enviar por e-mail">Enviar por e-mail</a> </li>
+    <li class="item02"><a href="../comunicar.aspx?keepThis=true&TB_iframe=true&height=440&width=330&inlineId=popup" id="toolbox2_A2" class="error thickbox" title="Comunicar erros">
+        Comunicar erros</a> </li>
+    <li class="item03"><a href="../sis/cadastro_newsletter.aspx?keepThis=true&TB_iframe=true&height=300&width=280&inlineId=popup" id="toolbox2_A3" class="newsletter thickbox" title="Informativo SP Notícias">
+        Receber boletim</a></li>
+    <li class="item04"><a class="print" style="display: block;">Imprimir</a> </li>
+    <li class="item05"><a class="smallFont" href="javascript:void(0);" title="Diminuir tamanho do texto">
+        Diminuir tamanho do texto</a> <a class="defaultFont" href="javascript:void(0);" title="Tamanho padrão do texto">
+            Tamanho padrão do texto</a> <a class="largeFont" href="javascript:void(0);" title="Aumentar tamanho do texto">
+                Aumentar tamanho do texto</a> </li>
+    <li class="item06"><a rel="contraste" class="contraste">Contraste</a> </li>
+    <li class="item07"><a href="../mapa.aspx" id="toolbox2_A4" class="mapa">Mapa do
+        Site</a> </li>
+    <li class="item08"><a href="../fale/default.aspx" id="toolbox2_A5" class="fale">
+        Fale Conosco</a> </li>
+    <li class="item09"><a href="../rss.ashx" id="toolbox2_A6" class="rss">RSS</a>
+    </li>
+    <li class="item10">
+        <a href="http://www.facebook.com/segurancapublicasp" id="toolbox2_A7" target="_blank">
+            <img src="../img/ico/facebook.png" id="toolbox2_imgFacebook" alt="Facebook" /></a>
+        <a href="https://twitter.com/#!/SegurancaSP" id="toolbox2_A8" target="_blank">
+            <img src="../img/ico/twitter.png" id="toolbox2_imgTwitter" alt="Twitter" /></a>
+        <a href="https://plus.google.com/u/0/101257925088133147645/posts" id="toolbox2_A9" target="_blank">
+            <img src="../img/ico/google.png" id="toolbox2_imgGooglePlus" alt="Google+" /></a>
+    </li>
+</ul>
+
+            </div>
+            <p>
+                Secretaria de Estado da Segurança Pública - Rua Libero Badaró, 39, Centro, SP -
+                CEP: 01009-000 - <a href="mailto:seguranca@sp.gov.br">seguranca@sp.gov.br</a></p>
+        </div>
+    </div>    
+    </form>
+</body>
+</html>
