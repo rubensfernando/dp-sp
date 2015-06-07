@@ -2,12 +2,11 @@ import scrapy
 from scrapy.selector import Selector
 from scrapy.utils.python import *
 
-class LoginSpider(scrapy.Spider):
-    name = 'test'
+class dpsCapital(scrapy.Spider):
+    name = 'capital'
     start_urls = ["http://www.ssp.sp.gov.br/novaestatistica/Pesquisa.aspx"]
     global years
     years = ['2012','2013','2014','2015']
-    global y1
     global city
     global dp
     city = '565'
@@ -76,9 +75,9 @@ class LoginSpider(scrapy.Spider):
         exportfile = open( "exported.json", "a")
         exportfile.write (str(items)+',')
         # content = response.xpath('//*[@id="ContentPlaceHolder1_repAnos_gridDados_0"]/tbody').extract()
-        filename = response.url.split("/")[-2]
-        with open(filename, 'wb') as f:
-            f.write(str(response.body))
+        # filename = response.url.split("/")[-2]
+        # with open(filename, 'wb') as f:
+        #     f.write(str(response.body))
 
         # exportfile2 = open( "response.txt", "a")
         # exportfile2.write (str(natureza))
