@@ -1,6 +1,14 @@
+# -*- coding: utf-8 -*-
 import scrapy
 from scrapy.selector import Selector
 from scrapy.utils.python import *
+import HTMLParser
+from django.utils.encoding import smart_str, smart_unicode
+from distritos.items import DistritosItem
+import lxml.etree
+import lxml.html
+from scrapy.http import HtmlResponse
+from bs4 import BeautifulSoup
 
 class dpsCapital(scrapy.Spider):
     name = 'capital'
@@ -9,6 +17,7 @@ class dpsCapital(scrapy.Spider):
     years = ['2012','2013','2014','2015']
     global city
     global dp
+    dps = []
     city = '565'
     dp = '1469'
 
@@ -32,12 +41,12 @@ class dpsCapital(scrapy.Spider):
                 'ctl00$ContentPlaceHolder1$ddlDelegacias':dp
                 },
                 dont_filter=True,
-                callback=self.after_login
+                callback=self.get_data
         )
 
 
 
-    def after_login(self, response):
+    def get_data(self, response):
         # check login succeed before going on
         # if "authentication failed" in response.body:
         #     self.logger.error("Login failed")
@@ -50,34 +59,32 @@ class dpsCapital(scrapy.Spider):
         items = []
         sel = Selector(response)
 
+        h = HTMLParser.HTMLParser()
 
         year = sel.xpath('//span[@id="ContentPlaceHolder1_repAnos_lbAno_0"]/text()').extract()[0]
         print response.xpath('//tbody/tr')
         print year
 
         for natureza in response.xpath('//tr[td]'):
-            item = []
+            crime = []
             for m, mes in enumerate(response.xpath('//th[@class="grid_headermes"]')):
-                #print m
-                #if m>0:
-                subitem = {}
+                nat = natureza.xpath('*[1]/text()')
+                nat_text = nat.extract()[0]
+
+                subitem = DistritosItem()
                 subitem["ano"] = unicode_to_str(year)
-                subitem["mes"] = unicode_to_str(mes.xpath('./text()').extract()[0])
-                subitem["natureza"] = unicode_to_str(natureza.xpath('*[1]/text()').extract()[0])
+                subitem["mes"] = unicode_to_str(mes.xpath('./text()').extract()[0],'utf-8')
+                # subitem["natureza"] = unicode_to_str(natureza.xpath('*[1]/text()').extract()[0],'utf-8')
+                subitem["natureza"] = nat_text.encode('utf-8')
                 subitem["dp"] = dp
                 subitem["valor"] = unicode_to_str(natureza.xpath('*['+str(m+2)+']/text()').extract()[0])
-                item.append(subitem)
+                crime.append(subitem)
 
-            items.append(item)
+            items.append(crime)
 
-        #items.append(sel.xpath('//*[@class="grid_mes"]').extract())
+        exportfile = open( "exports/exported-"+ city +'-'+ dp +".json", "a")
+        exportfile.write (str(items) + ', ')
 
-        exportfile = open( "exported.json", "a")
-        exportfile.write (str(items)+',')
-        # content = response.xpath('//*[@id="ContentPlaceHolder1_repAnos_gridDados_0"]/tbody').extract()
-        # filename = response.url.split("/")[-2]
-        # with open(filename, 'wb') as f:
-        #     f.write(str(response.body))
-
-        # exportfile2 = open( "response.txt", "a")
-        # exportfile2.write (str(natureza))
+        filename = response.url.split("/")[-2]
+        with open("exports/"+filename+".html", 'wb') as f:
+            f.write(str(response.body))

@@ -11,4 +11,9 @@ import scrapy
 class DistritosItem(scrapy.Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
+    ano = scrapy.Field()
+    mes = scrapy.Field()
+    natureza = scrapy.Field()
+    dp = scrapy.Field()
+    valor = scrapy.Field()
     pass
