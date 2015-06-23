@@ -57,3 +57,7 @@ docs/_build/
 target/
 
 exports/
+*.csv
+*.json
+
+distritos/spiders/dpCapital.py

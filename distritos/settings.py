@@ -14,4 +14,4 @@ SPIDER_MODULES = ['distritos.spiders']
 NEWSPIDER_MODULE = 'distritos.spiders'
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'distritos (+http://www.yourdomain.com)'
+USER_AGENT = 'distritos (+http://www.folha.uol.com.br)'
